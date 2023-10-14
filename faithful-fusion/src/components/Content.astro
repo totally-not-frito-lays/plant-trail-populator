@@ -1,13 +1,18 @@
-<!-- <section>
-    <h2>Content</h2>
-    <p>Trail Information</p>
-</section> -->
 <section class="content-section">
+
     <div class="visualizer">
-        
-    </div>
-    <div class="plant-list">
-        <p>Plant List</p>
+        <script>
+            const apiUrl = 'http://localhost:3000/api/data';
+            fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+                console.log('Data from server:', data);
+                // Update your website with the received data
+            })
+            .catch(error => console.error('Error fetching data:', error));
+
+        </script>
+        <!-- <script type="module" src="public/scripts/traffic.js"></script> -->
     </div>
 </section>
 
@@ -20,6 +25,7 @@
     .visualizer {
         flex: 1;
         padding: 20px;
+        background-color: aliceblue;
     }
 
     .plant-list {
